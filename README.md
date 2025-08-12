@@ -27,8 +27,8 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 ## 🚀 Passo a Passo
 
 ### 1️⃣ Alterar layout do teclado para ABNT2 (opcional)
-Se o teclado não estiver configurado corretamente, você pode mudar para o padrão brasileiro ABNT2.  
-![Mudar layout do teclado](Mudar%20layout%20do%20teclado%20.png)
+Entre nas opções, vá até teclado e mude para Português (Isso irá facilitar a digitação de comandos no futuro.)
+![Mudar layout do teclado](/images/Mudar%20layout%20do%20teclado%20.png)
 
 ---
 
@@ -37,17 +37,17 @@ Este IP será usado para acessar o site localmente pelo navegador.
 ```bash
 ip a
 ```
-![Verificar o IP](Verificar%20o%20IP%20para%20entrar%20no%20site%20local.png)
+![Verificar o IP](/images/Verificar%20o%20IP%20para%20entrar%20no%20site%20local.png)
 
 ---
 
 ### 3️⃣ Instalar o Nginx
 Atualize os pacotes e instale o Nginx:
 ```bash
-sudo apt update && sudo apt upgrade -y
-sudo apt install nginx -y
+sudo apt update
+sudo apt install nginx
 ```
-![Instalar NGINX](Instalar%20NGINX.png)
+![Instalar NGINX](/images/Instalar%20NGINX.png)
 
 ---
 
@@ -57,7 +57,7 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 sudo systemctl status nginx
 ```
-![Iniciar e verificar NGINX](Iniciar%20NGINX%20e%20Ver%20se%20est%C3%A1%20rodando.png)
+![Iniciar e verificar NGINX](/images/Iniciar%20NGINX%20e%20Ver%20se%20est%C3%A1%20rodando.png)
 
 ---
 
@@ -65,25 +65,21 @@ sudo systemctl status nginx
 ```bash
 sudo apt install curl -y
 ```
-![Instalar o curl](Instalar%20o%20curl.png)
+![Instalar o curl](/images/Instalar%20o%20curl.png)
 
 ---
 
 ### 6️⃣ Editar a página inicial do Nginx
 ```bash
-sudo nano /var/www/html/index.html
+sudo nano /var/www/html/index.nginx-debian.html
 ```
-Altere o conteúdo para algo como:
-```html
-<h1>Bem-vindo ao meu servidor!</h1>
-```
-![Editar Site NGINX](Editar%20Site%20NGINX.png)
+![Editar Site NGINX](/images/Editar%20Site%20NGINX.png)
 
 ---
 
 ### 7️⃣ Criar HTML e CSS personalizados (opcional)
-Você pode adicionar HTML e CSS para deixar a página mais bonita.  
-![HTML e CSS do site](HTML%20e%20CSS%20do%20site%20.png)
+Você pode adicionar HTML e CSS do jeito que você preferir, para deixar a página mais bonita.  
+![HTML e CSS do site](/images/HTML%20e%20CSS%20do%20site%20.png)
 
 ---
 
@@ -92,42 +88,49 @@ Acesse pelo IP da máquina:
 ```
 http://SEU_IP
 ```
-![Meu site](Meu%20site.png)
+![Meu site](/images/Meu%20site.png)
 
 ---
 
 ### 9️⃣ Criar Webhook no Discord
 - Vá até o canal desejado → **Configurações do Canal** → **Integrações** → **Webhooks** → **Novo Webhook**.
 - Copie a **URL**.  
-![Discord](Discord.png)
+![Discord](/images/webhook.png)
 
 ---
 
-### 🔟 Criar o Script de Monitoramento
+### 🔟 Criar o Script de Monitoramento e Alertas no Discord
 ```bash
-sudo nano /usr/local/bin/monitor_nginx.sh
+sudo nano /home/SeuUsuário/monitor_nginx.sh
 ```
 Cole:
 ```bash
 #!/bin/bash
 
 URL="http://localhost"
-LOGFILE="/var/log/monitoramento.log"
-WEBHOOK_URL="SUA_URL_DO_WEBHOOK"
+LOGFILE="/home/tata/monitoramento.log"
+WEBHOOK_URL="https://discord.com/api/webhooks/1404672193044025375/YhyMycLWA-oSZcgQBf7ndpB8J6_T2wRLBNGHiM09usJVj7Q_fsRf5rMOWgYuaKNPMwOV"
 
-if curl -s --head --request GET "$URL" | grep "200 OK" > /dev/null
+if /usr/bin/curl -s --head --request GET "$URL" | /bin/grep "200 OK" > /dev/null
 then
     echo "$(date): O site está no ar" >> $LOGFILE
 else
     echo "$(date): O site está fora do ar, tentando restabelecer..." >> $LOGFILE
 
-    curl -H "Content-Type: application/json"          -X POST          -d "{\"content\": \"⚠️ O servidor está fora do ar! Tentando restabelecer...\"}"          "$WEBHOOK_URL"
+    # Alerta no Discord
+   curl  -H "Content-Type: application/json" \
+         -X POST \
+         -d '{"content": "O servidor está fora do ar! Tentando restabelecer..."}' \
+        "$WEBHOOK_URL"
 
+    # Reinicia o servidor Nginx
     sudo systemctl restart nginx
+   curl  -H "Content-Type: application/json" \
+         -X POST \
+         -d '{"content": "O servidor já foi restabelecido!"}' \
+         "$WEBHOOK_URL"
 
-    curl -H "Content-Type: application/json"          -X POST          -d "{\"content\": \"✅ O servidor foi restabelecido com sucesso!\"}"          "$WEBHOOK_URL"
-
-    echo "$(date): Nginx reiniciado com sucesso" >> $LOGFILE
+    echo "$(date): Nginx estabilizado com sucesso" >> $LOGFILE
 fi
 ```
 Dar permissão de execução:
