@@ -15,7 +15,7 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 ---
 
 ## 🛠 Instalação do Ubuntu na Máquina Virtual
-1️⃣ Baixar o VirtualBox
+### 1️⃣ Baixar o VirtualBox
 
     Acesse: https://www.virtualbox.org/wiki/Downloads
 
@@ -23,7 +23,9 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
     Baixe e instale seguindo as instruções do instalador.
 
-2️⃣ Baixar a Imagem do Sistema Operacional (ISO)
+---
+
+### 2️⃣ Baixar a Imagem do Sistema Operacional (ISO)
 
     Exemplo: Para instalar Ubuntu, vá em: https://ubuntu.com/download
 
@@ -31,29 +33,40 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
         ISO é a "imagem" do sistema, equivalente ao DVD de instalação.
 
-3️⃣ Criar a Máquina Virtual
+---
+
+### 3️⃣ Criar a Máquina Virtual
 
     Abra o VirtualBox.
 
     Clique em Novo.
-
-    Preencha:
-
-        Nome: escolha algo descritivo (ex.: Ubuntu-VM).
-
-        Tipo: Linux (ou Windows, se for o caso).
-
-        Versão: selecione a correta (ex.: Ubuntu 64-bit).
-
-    Clique em Avançar.
+    
 ![Criar nova máquina virtual](/images/novo.png)
 
 
-4️⃣ Hardware
+    Preencha:
+
+        Nome: escolha algo descritivo (ex.: Linux Projeto).
+
+        Selecione a ISO que você baixou logo acima: Ubuntu 
+
+        Marque a opção "Pular Instalação Desassistida"
+
+    Clique em Avançar.
+
+![Criar nova máquina virtual](/images/vm.png)
+
+---
+
+
+### 4️⃣ Hardware
 
     Configurar de acordo com as configurações da sua máquina, recomenda-se 2 GB para sistemas leves (Ubuntu Server) e 4 GB ou mais para sistemas com interface gráfica (Ubuntu Desktop, Windows).
+![Disco Rígido Virtual](/images/hardware.png)
 
-5️⃣ Criar Disco Rígido Virtual
+---
+
+### 5️⃣ Criar Disco Rígido Virtual
 
     Escolha Criar um disco rígido virtual agora.
 
@@ -63,9 +76,19 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
 ---
 
+### 6️⃣ Iniciar a Instalação
+
+    Clique em Iniciar na máquina virtual.
+
+    O sistema vai carregar o instalador a partir da ISO.
+
+    Siga os passos do instalador do sistema operacional (idioma, teclado, usuário, senha, etc.).
+
+---
+
 ## 🚀 Passo a Passo
 
-### 1️⃣ Alterar layout do teclado para ABNT2 (opcional)
+### 1️⃣ Alterar layout do teclado para ABNT2 (Caso seu teclado esteja com outra configuração)
 Entre nas opções, vá até teclado e mude para Português (Isso irá facilitar a digitação de comandos no futuro.)
 ![Mudar layout do teclado](/images/Mudar%20layout%20do%20teclado%20.png)
 
@@ -186,12 +209,13 @@ sudo chmod +x /home/seuUsuario/monitor_nginx.sh
 ### 1️⃣2️⃣ Configurar o script para rodar a cada 1 minuto
 ```bash
 sudo crontab -e
+
 ```
+![Chamando o Crontab](/images/Chamando%20o%20Crontab%20.png)  
 Adicione:
 ```
 * * * * * /usr/local/bin/monitor_nginx.sh
 ```
-![Chamando o Crontab](/images/Chamando%20o%20Crontab%20.png)  
 ![Crontab Automatização](/images/crontab%20(Automatiza%C3%A7%C3%A3o%20de%20Script).png)
 
 ---
