@@ -1,4 +1,4 @@
-# 🌐 Projeto Linux – Servidor Web com Monitoramento e Alerta no Discord
+# 🐧Projeto Linux – Servidor Web com Monitoramento e Alerta no Discord
 
 Este projeto ensina **passo a passo**, de forma simples, como criar um servidor web no **Ubuntu** usando o **Nginx**, configurar uma página HTML e montar um sistema de **monitoramento automatizado** que envia alertas para o **Discord** e reiniciar o servidor caso ele pare de funcionar automaticamente.
 
