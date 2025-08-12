@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto Linux - Uol Compass</title>
+  <meta name="description" content="Projeto Linux" />
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #151820;
+      --text: #e8edf2;
+      --muted: #a8b3c7;
+      --border: #232838;
+      --radius: 14px;
+      --space: clamp(16px, 2vw, 28px);
+      --maxw: 1080px;
+      --shadow-soft: 0 6px 20px rgba(0,0,0,.25);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fc;
+        --card: #ffffff;
+        --text: #0e1220;
+        --muted: #4a5568;
+        --border: #e6eaf2;
+        --shadow-soft: 0 6px 20px rgba(10, 23, 55, .06);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(93,140,255,.15), transparent 60%),
+                  radial-gradient(1000px 500px at 110% 20%, rgba(125,240,193,.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 14px var(--space);
+      background: color-mix(in oklab, var(--bg), transparent 30%);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space);
+    }
+
+    .container {
+      max-width: var(--maxw);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .hero p {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: clamp(14px, 2vw, 18px);
+    }
+
+    .section-title {
+      font-size: clamp(22px, 3.6vw, 30px);
+      margin: 24px 0 16px;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card), white 6%), var(--card));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="brand">Projeto Linux - Uol Compass</span>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1>Site feito pelo NGINX para o Projeto 1 de Linux</h1>
+        <p>Sejam bem-vindos ao meu site desenvolvido para testar a funcionalidade de Infraestrutura Web com Monitoramento Automatizado</p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Sobre mim</h2>
+        <p class="section-sub">
+          Meu nome é Otávio, tenho 20 anos e sou estudante de Segurança da Informação. Atualmente, estou realizando um estágio/bolsa na Empresa Uol Compass, onde irei trilhar e me desenvolver em AWS DevSecOps.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Me siga no Instagram:</h3>
+            <p>otaviolxna</p>
+          </article>
+          <article class="card">
+            <h3>Conecte-se comigo no Linkedin:</h3>
+            <p>otaviolxna</p>
+          </article>
+          <article class="card">
+            <h3>E-mail para contato:</h3>
+            <p>otaviolxna14@gmail.com</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
