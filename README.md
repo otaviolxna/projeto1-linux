@@ -59,7 +59,7 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
     Tamanho: mínimo 20 GB para Ubuntu
 
-![Disco Rígido Virtual](/images/??.png)
+![Disco Rígido Virtual](/images/disco.png)
 
 ---
 
