@@ -1,14 +1,12 @@
 # 🌐 Projeto Linux – Servidor Web com Monitoramento e Alerta no Discord
 
-Este projeto ensina **passo a passo**, de forma simples, como criar um servidor web no **Ubuntu** usando o **Nginx**, configurar uma página HTML e montar um sistema de **monitoramento automatizado** que envia alertas para o **Discord** e reinicia o servidor caso ele pare de funcionar.
-
-> 🧑‍💻 Mesmo que você nunca tenha usado Linux, este guia foi feito para ser seguido sem conhecimento prévio.
+Este projeto ensina **passo a passo**, de forma simples, como criar um servidor web no **Ubuntu** usando o **Nginx**, configurar uma página HTML e montar um sistema de **monitoramento automatizado** que envia alertas para o **Discord** e reiniciar o servidor caso ele pare de funcionar automaticamente.
 
 ---
 
 ## 📌 O que vamos aprender
+- Configurar uma máquina virtual Ubuntu
 - Instalar e configurar um servidor Nginx no Linux.
-- Criar e editar uma página HTML simples.
 - Configurar um Webhook no Discord para receber alertas.
 - Criar um script em Bash para monitorar o servidor.
 - Automatizar o script para rodar a cada 1 minuto com o **crontab**.
@@ -16,11 +14,56 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
 ---
 
-## 🛠 Pré-requisitos
-- Ter o **Ubuntu** instalado (Desktop ou Server).
-- Conexão com a internet.
-- Uma conta no Discord.
-- Máquina virtual ou computador real rodando Linux.
+## 🛠 Instalação do Ubuntu na Máquina Virtual
+1️⃣ Baixar o VirtualBox
+
+    Acesse: https://www.virtualbox.org/wiki/Downloads
+
+    Escolha a versão para o seu sistema (Windows, macOS ou Linux).
+
+    Baixe e instale seguindo as instruções do instalador.
+
+2️⃣ Baixar a Imagem do Sistema Operacional (ISO)
+
+    Exemplo: Para instalar Ubuntu, vá em: https://ubuntu.com/download
+
+    Baixe o arquivo .iso do sistema desejado.
+
+        ISO é a "imagem" do sistema, equivalente ao DVD de instalação.
+
+3️⃣ Criar a Máquina Virtual
+
+    Abra o VirtualBox.
+
+    Clique em Novo.
+
+    Preencha:
+
+        Nome: escolha algo descritivo (ex.: Ubuntu-VM).
+
+        Tipo: Linux (ou Windows, se for o caso).
+
+        Versão: selecione a correta (ex.: Ubuntu 64-bit).
+
+    Clique em Avançar.
+    
+
+4️⃣ Definir Memória RAM
+
+    Recomenda-se 2 GB para sistemas leves (Ubuntu Server) e 4 GB ou mais para sistemas com interface gráfica (Ubuntu Desktop, Windows).
+
+5️⃣ Criar Disco Rígido Virtual
+
+    Escolha Criar um disco rígido virtual agora.
+
+    Tipo de arquivo: VDI (VirtualBox Disk Image).
+
+    Armazenamento: Dinamicamente alocado.
+
+    Tamanho: mínimo 20 GB para Ubuntu e 50 GB para Windows.
+
+
+
 
 ---
 
