@@ -109,7 +109,7 @@ Cole:
 
 URL="http://localhost"
 LOGFILE="/home/tata/monitoramento.log"
-WEBHOOK_URL="https://discord.com/api/webhooks/1404672193044025375/YhyMycLWA-oSZcgQBf7ndpB8J6_T2wRLBNGHiM09usJVj7Q_fsRf5rMOWgYuaKNPMwOV"
+WEBHOOK_URL="url do webhook"
 
 if /usr/bin/curl -s --head --request GET "$URL" | /bin/grep "200 OK" > /dev/null
 then
@@ -137,22 +137,10 @@ Dar permissão de execução:
 ```bash
 sudo chmod +x /usr/local/bin/monitor_nginx.sh
 ```
-![Criação do Script](Cria%C3%A7%C3%A3o%20do%20Script.png)
+![Criação do Script](/images/Cria%C3%A7%C3%A3o%20do%20Script.png)
 
 ---
 
-### 1️⃣1️⃣ Permitir que o script reinicie o Nginx sem pedir senha
-Edite o sudoers:
-```bash
-sudo visudo
-```
-Adicione no final:
-```
-SEU_USUARIO ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
-```
-![Permissões](Permiss%C3%B5es.png)
-
----
 
 ### 1️⃣2️⃣ Configurar o script para rodar a cada 1 minuto
 ```bash
@@ -162,8 +150,8 @@ Adicione:
 ```
 * * * * * /usr/local/bin/monitor_nginx.sh
 ```
-![Chamando o Crontab](Chamando%20o%20Crontab%20.png)  
-![Crontab Automatização](crontab%20(Automatiza%C3%A7%C3%A3o%20de%20Script).png)
+![Chamando o Crontab](/images/Chamando%20o%20Crontab%20.png)  
+![Crontab Automatização](/images/crontab%20(Automatiza%C3%A7%C3%A3o%20de%20Script).png)
 
 ---
 
@@ -175,8 +163,8 @@ sudo systemctl stop nginx
 Aguarde 1 minuto e veja:
 - Alerta no Discord.
 - Nginx reiniciado automaticamente.  
-![Site OFF](Site%20OFF.png)  
-![Teste Falha no Servidor](Teste%20FALHA%20NO%20SERVIDOR.png)
+![Site OFF](/images/Site%20OFF.png)  
+![Alerta no Discord](/images/Discord.png)
 
 ---
 
@@ -185,20 +173,6 @@ Todos os eventos ficam registrados em:
 ```bash
 cat /var/log/monitoramento.log
 ```
-![Script NGINX](Script_NGINX.png)
+![Script NGINX](/images/??.png)
 
 ---
-
-## 📸 Resumo Visual
-1. Instalação do Nginx → **OK**  
-2. Página HTML personalizada → **OK**  
-3. Webhook configurado → **OK**  
-4. Script em execução → **OK**  
-5. Alerta no Discord em caso de falha → **OK**  
-6. Reinício automático do servidor → **OK**
-
----
-
-## ✨ Autor
-**Otávio Lana**  
-Projeto de prática em **Linux, Nginx, Bash, Automação e DevSecOps**.
