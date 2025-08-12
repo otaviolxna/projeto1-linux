@@ -108,7 +108,7 @@ Cole:
 #!/bin/bash
 
 URL="http://localhost"
-LOGFILE="/home/tata/monitoramento.log"
+LOGFILE="/home/seuUsuario/monitoramento.log"
 WEBHOOK_URL="url do webhook"
 
 if /usr/bin/curl -s --head --request GET "$URL" | /bin/grep "200 OK" > /dev/null
@@ -133,11 +133,13 @@ else
     echo "$(date): Nginx estabilizado com sucesso" >> $LOGFILE
 fi
 ```
-Dar permissão de execução:
+### 1️⃣1️⃣ Dar permissão de execução:
 ```bash
-sudo chmod +x /usr/local/bin/monitor_nginx.sh
+sudo chown usuario:usuario /home/usuario/monitoramento.log
+sudo chmod 664 /home/seuUsuario/monitoramento.log
+sudo chmod +x /home/seuUsuario/monitor_nginx.sh
 ```
-![Criação do Script](/images/Cria%C3%A7%C3%A3o%20do%20Script.png)
+![Permissão de Execução](/images/Permissões.png)
 
 ---
 
@@ -173,6 +175,6 @@ Todos os eventos ficam registrados em:
 ```bash
 cat /var/log/monitoramento.log
 ```
-![Script NGINX](/images/??.png)
+![Script NGINX](/images/monitoramento.png)
 
 ---
