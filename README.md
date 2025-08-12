@@ -46,24 +46,20 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
         Versão: selecione a correta (ex.: Ubuntu 64-bit).
 
     Clique em Avançar.
-    
+![Criar nova máquina virtual](/images/novo.png)
 
-4️⃣ Definir Memória RAM
 
-    Recomenda-se 2 GB para sistemas leves (Ubuntu Server) e 4 GB ou mais para sistemas com interface gráfica (Ubuntu Desktop, Windows).
+4️⃣ Hardware
+
+    Configurar de acordo com as configurações da sua máquina, recomenda-se 2 GB para sistemas leves (Ubuntu Server) e 4 GB ou mais para sistemas com interface gráfica (Ubuntu Desktop, Windows).
 
 5️⃣ Criar Disco Rígido Virtual
 
     Escolha Criar um disco rígido virtual agora.
 
-    Tipo de arquivo: VDI (VirtualBox Disk Image).
+    Tamanho: mínimo 20 GB para Ubuntu
 
-    Armazenamento: Dinamicamente alocado.
-
-    Tamanho: mínimo 20 GB para Ubuntu e 50 GB para Windows.
-
-
-
+![Disco Rígido Virtual](/images/??.png)
 
 ---
 
