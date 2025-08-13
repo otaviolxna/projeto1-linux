@@ -74,7 +74,7 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 ### 4️⃣ Hardware
 
     Configurar de acordo com as configurações da sua máquina, recomenda-se 2 GB para sistemas leves (Ubuntu Server) e 4 GB ou mais para sistemas com interface gráfica (Ubuntu Desktop, Windows).
-![Disco Rígido Virtual](/images/hardware.png)
+![RAM](/images/hardware.png)
 
 ---
 
@@ -88,7 +88,16 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
 ---
 
-### 6️⃣ Iniciar a Instalação
+### 6️⃣ Altere a configuração de rede
+    Clique em configurações 
+    Selecione rede
+    E mude o modo de Rede: NAT > Modo Bridge (Local) 
+
+![Configuração de Rede](/images/local.png)
+
+---
+
+### 7️⃣ Iniciar a Instalação
 
     Clique em Iniciar na máquina virtual.
 
@@ -169,7 +178,7 @@ http://SEU_IP
 ### 9️⃣ Criar Webhook no Discord
 - Vá até o canal desejado → **Configurações do Canal** → **Integrações** → **Webhooks** → **Novo Webhook**.
 - Copie a **URL**.  
-![Discord](/images/webhook.png)
+![WebHook](/images/webhook.png)
 
 ---
 
@@ -250,7 +259,7 @@ Todos os eventos ficam registrados em:
 ```bash
 cat /var/log/monitoramento.log
 ```
-![Script NGINX](/images/monitoramento.png)
+![LOGS](/images/monitoramento.png)
 
 ---
 
