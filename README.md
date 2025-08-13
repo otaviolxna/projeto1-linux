@@ -140,7 +140,7 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 sudo systemctl status nginx
 ```
-![Iniciar e verificar NGINX](/images/Iniciar%20NGINX%20e%20Ver%20se%20est%C3%A1%20rodando.png)
+![Iniciar e verificar NGINX](/images/nginx.png)
 
 ---
 
