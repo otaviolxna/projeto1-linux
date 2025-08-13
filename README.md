@@ -4,6 +4,18 @@ Este projeto ensina **passo a passo**, de forma simples, como criar um servidor 
 
 ---
 
+### ⚙️ Tecnologias Utilizadas
+
+- Ubuntu Linux – Sistema operacional open source, estável e amplamente usado em servidores.
+- VirtualBox – Software gratuito para criação de máquinas virtuais, facilitando testes e simulações.
+- Nginx – Servidor web leve e eficiente, utilizado para servir páginas HTML e aplicações web.
+- Bash Script – Linguagem de script padrão do Linux para automação de tarefas.
+- Cron (crontab) – Agendador de tarefas para executar scripts periodicamente.
+- curl – Ferramenta de linha de comando para fazer requisições HTTP, usada para monitorar o servidor e enviar alertas.
+- Discord Webhook – Integração que permite o envio automático de mensagens para canais do Discord, facilitando alertas em tempo real.
+
+---
+
 ## 📌 O que vamos aprender
 - Configurar uma máquina virtual Ubuntu
 - Instalar e configurar um servidor Nginx no Linux.
@@ -239,5 +251,13 @@ Todos os eventos ficam registrados em:
 cat /var/log/monitoramento.log
 ```
 ![Script NGINX](/images/monitoramento.png)
+
+---
+
+### 🔚 Considerações Finais
+
+Este projeto demonstrou a implementação prática de um servidor web utilizando Nginx em ambiente Linux, aliado a um sistema automatizado de monitoramento e alerta via webhook do Discord. A utilização de scripts em Bash combinados com o agendador de tarefas crontab exemplifica uma abordagem eficiente para garantir alta disponibilidade e rápida resposta a falhas.
+
+A integração do monitoramento com notificações em tempo real permite a identificação imediata de problemas, reduzindo o tempo de inatividade e facilitando a manutenção preventiva. Além disso, o uso de ferramentas nativas do Linux e recursos gratuitos torna o processo acessível e escalável para ambientes maiores.
 
 ---
