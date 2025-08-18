@@ -2,8 +2,7 @@
 
 URL="http://localhost"
 LOGFILE="/home/tata/monitoramento.log"
-WEBHOOK_URL="https://discord.com/api/webhooks/1404672193044025375/YhyMycLWA-oSZcgQBf7ndpB8J6_T2wRLBNGHiM09usJVj7Q_fsRf5rMOWgYuaKNPMwOV"
-
+WEBHOOK_URL="SUA_URL"
 if /usr/bin/curl -s --head --request GET "$URL" | /bin/grep "200 OK" > /dev/null
 then
     echo "$(date): O site está no ar" >> $LOGFILE
@@ -24,4 +23,5 @@ else
          "$WEBHOOK_URL"
 
     echo "$(date): Nginx estabilizado com sucesso" >> $LOGFILE
+
 fi
